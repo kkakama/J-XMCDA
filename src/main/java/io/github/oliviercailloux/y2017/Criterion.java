@@ -21,7 +21,7 @@ import com.google.gson.JsonIOException;
  */
 public class Criterion {
 
-	private int id;
+	public int id;
 	private String name;
 	
 	private static List<Criterion> criterionList;

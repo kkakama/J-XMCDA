@@ -2,12 +2,15 @@ package io.github.oliviercailloux.y2017;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.json.CDL;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
@@ -16,17 +19,40 @@ import com.google.gson.JsonIOException;
 
 public class Evaluations{
 	List <Criterion> crits;
-	List<Alternative> alt;
+	ArrayList<Alternative> alts;
 	List<Double> val;
 	// Evaluations par alternative
-	final Multimap<Alternative, Criterion> Evals = ArrayListMultimap.create();
-	
+
+	private static Multimap<Alternative, Criterion> altCrit = ArrayListMultimap.create(); 
+	private static Multimap<Multimap<Alternative, Criterion>,Double> evals = ArrayListMultimap.create();
 	public Evaluations(List<Double> val) {
 		this.crits = Criterion.getcriterionList();
-		this.alt = Alternative.getAlternativeList();
+		this.alts = Alternative.getAlternativeList();
 		this.val= val;
 		
 	}
+	
+	// How to implement all the elements if the mapList ?
+	    public static void addEvaluation(Evaluations eva) {
+	     	for(int i = 0 ; i < eva.val.size(); i++) {
+	    	 	for(int j = 0 ; j < eva.crits.size(); j++) {
+	    	 		 	altCrit.put(eva.crits.get(j),eva.val.get(i));
+	    	 	}
+
+			while(!altCrit.isEmpty()) {
+				for(int j = 0 ; j < eva.val.size(); j++) {
+	    	 		 	evals.put(altCrit.put(altCrit.keySet(eva.alts.get(j)).  ,eva.val.get(j)));
+	    	 	}
+	    	}
+	    }
+
+	    public static void clearcriterionList() {
+	        evals.clear();
+	    }
+
+	    public static Multimap<Alternative, Criterion>  EvaluationToList(){
+	         return evals;
+	    }
 	
 	//Method to convert the Evaluation object to a JSON type
 	public String toJSONString() {
@@ -49,10 +75,11 @@ public class Evaluations{
 		}
 	}
 	//Method to convert the Evaluations object to a CSV file
-	public String toCSV() throws JSONException {
+	public String toCSV() throws JSONException, ParseException {
 		
 		String genreJson = toJSONString();
-		JSONArray array = new JSONArray(genreJson);
+		JSONParser parser = new JSONParser();
+		JSONArray array = (JSONArray)parser.parse(genreJson );
 		try {
             JSONObject json = new JSONObject(array);
 			return CDL.toString(new JSONArray(json.toString()));
