@@ -1,31 +1,17 @@
 package io.github.oliviercailloux.y2017;
+
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.XML;
+import org.json.simple.parser.ParseException;
 
+public class Test{
 
-public class Test {
+public static void main(String[] args) throws JSONException, ParseException{
 
-	public static void main(String[] args) throws JSONException {
-
-		String xmlString = "<pair>\r\n" + 
-				"<initial>\r\n" + 
-				"<alternativeID>a01</alternativeID>\r\n" + 
-				"</initial>\r\n" + 
-				"<terminal>\r\n" + 
-				"<alternativeID>a01</alternativeID>\r\n" + 
-				"</terminal>\r\n" + 
-				"<value>\r\n" + 
-				"<real>0.0</real>\r\n" + 
-				"</value>\r\n" + 
-				"</pair>";
-
-		JSONObject jsonObject = XML.toJSONObject(xmlString);
-
-		System.out.println(jsonObject);
-	}
 
 }
-
+}
 
 
