@@ -14,18 +14,27 @@ import com.google.common.collect.Multimap;
 import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
 
-public class Evaluations {
-	
+public class Evaluations{
+	List <Criterion> crits;
+	List<Alternative> alt;
+	List<Double> val;
 	// Evaluations par alternative
-	final Multimap<Alternative, Criterion> Alternatioves = ArrayListMultimap.create();
+	final Multimap<Alternative, Criterion> Evals = ArrayListMultimap.create();
 	
+	public Evaluations(List<Double> val) {
+		this.crits = Criterion.getcriterionList();
+		this.alt = Alternative.getAlternativeList();
+		this.val= val;
+		
+	}
+	
+	//Method to convert the Evaluation object to a JSON type
 	public String toJSONString() {
 		Gson gson = new Gson();
-		
 		//gson.toJson(this, new FileWriter("D:\\Evaluations.json"));
 		return gson.toJson(this);
 	}
-	
+	//Method to convert the Evaluations object to a JSON file
 	public void toJSONFile() {
 		Gson gson = new Gson();
 		
@@ -39,13 +48,13 @@ public class Evaluations {
 			System.out.println(e.getMessage());
 		}
 	}
-	
-	public String toCSV() {
+	//Method to convert the Evaluations object to a CSV file
+	public String toCSV() throws JSONException {
 		
 		String genreJson = toJSONString();
-        
+		JSONArray array = new JSONArray(genreJson);
 		try {
-            JSONObject json = new JSONObject(genreJson);
+            JSONObject json = new JSONObject(array);
 			return CDL.toString(new JSONArray(json.toString()));
 		} catch (JSONException e) {
 			System.out.println(e.getMessage());

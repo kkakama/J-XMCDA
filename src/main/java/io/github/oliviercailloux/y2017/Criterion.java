@@ -5,6 +5,8 @@ package io.github.oliviercailloux.y2017;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,19 +22,37 @@ import com.google.gson.JsonIOException;
 public class Criterion {
 
 	private int id;
-
 	private String name;
-
-	public Criterion() {
-
-	}
-
+	
+	private static List<Criterion> criterionList;
+	// Criterion constructor
 	public Criterion(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
+	// List and method of all the Criteria
+	 public static void createCriterionList() {
+	        criterionList = new ArrayList<Criterion>();
+	    }
 
+	    public static void addcriterionToList(Criterion criterion) {
+	        criterionList.add(criterion);
+	    }
+
+	    public static Criterion getcriterionAt(int location) {
+	        return criterionList.get(location);
+	    }
+
+	    public static void clearcriterionList() {
+	        criterionList.clear();
+	    }
+
+	    public static List<Criterion> getcriterionList() {
+	         return criterionList;
+	    }
+	    
+	 // Getter and Setter of the ID and the name   
 	public int getId() {
 		return id;
 	}
@@ -48,24 +68,27 @@ public class Criterion {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 
 	@Override 
 	public String toString(){
 		return "Criterion name/ID :" + name+"/"+id;
 	}
-
+	
+	//Method to convert an XML file to  JSON file
 	public void xmlToJson(String file) throws JSONException {
 		JSONObject jsonObject = XML.toJSONObject(file);		
 		System.out.println(jsonObject);
 	}
 	
-	public String toJSONString() {
+	//Method to convert the Criterion object to a JSON type
+	public String toJSONString() throws JsonIOException, IOException {
 		Gson gson = new Gson();
-		
-		//gson.toJson(this, new FileWriter("D:\\Evaluations.json"));
 		return gson.toJson(this);
 	}
-	
+
+
+	//Method to convert the Criterion object to a JSON file
 	public void toJSONFile() {
 		Gson gson = new Gson();
 		
