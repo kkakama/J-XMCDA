@@ -11,6 +11,7 @@ import org.json.simple.parser.JSONParser;
 public class Alternative {
 	private String id;
 	private String name;
+	private static ArrayList<Alternative> list_alternatives;
 	
 	
 	/**
@@ -47,6 +48,7 @@ public class Alternative {
 	 * @return
 	 * list of alternatives in the correct format (ID, NAME)
 	 */
+
 	public static ArrayList<Alternative> readJsonAlternatives(String file){
 		ArrayList<Alternative> alternatives_list=new ArrayList<Alternative>();
 		Alternative alt;
@@ -77,6 +79,21 @@ public class Alternative {
 
         
         }
+	public static void createAlternativeList() {
+		list_alternatives = new ArrayList<Alternative>();
+    }
+
+    public static void addAlternativeToList(Alternative Alternative) {
+    	list_alternatives.add(Alternative);
+    }
+
+    public static void clearAlternativeList() {
+    	list_alternatives.clear();
+    }
+
+    public static ArrayList<Alternative> getAlternativeList() {
+         return list_alternatives;
+    }
 
 /*	public static void main(String[] args) {
 		
