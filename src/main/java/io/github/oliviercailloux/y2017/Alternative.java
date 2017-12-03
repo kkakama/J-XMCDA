@@ -9,9 +9,9 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class Alternative {
-	private String id;
+	public String id;
 	private String name;
-	private static ArrayList<Alternative> list_alternatives;
+	private static ArrayList<Alternative> list_alternatives =new ArrayList<Alternative>();
 	
 	
 	/**
@@ -40,6 +40,11 @@ public class Alternative {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	@Override 
+	public String toString(){
+		return "Alternative name :" +this.name+ " , id :" + this.id+" ";
 	}
 	/**
 	 * 

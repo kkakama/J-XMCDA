@@ -24,7 +24,7 @@ public class Criterion {
 	public int id;
 	private String name;
 	
-	private static List<Criterion> criterionList;
+	private static List<Criterion> criterionList= new ArrayList<Criterion>();
 	// Criterion constructor
 	public Criterion(int id, String name) {
 		super();
@@ -32,9 +32,7 @@ public class Criterion {
 		this.name = name;
 	}
 	// List and method of all the Criteria
-	 public static void createCriterionList() {
-	        criterionList = new ArrayList<Criterion>();
-	    }
+
 
 	    public static void addcriterionToList(Criterion criterion) {
 	        criterionList.add(criterion);
@@ -72,7 +70,7 @@ public class Criterion {
 
 	@Override 
 	public String toString(){
-		return "Criterion name/ID :" + name+"/"+id;
+		return "Criterion name :" +this.name+ " , id :" + this.id;
 	}
 	
 	//Method to convert an XML file to  JSON file

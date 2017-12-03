@@ -24,7 +24,7 @@ public class Evaluations{
 	// Evaluations par alternative
 
 	private static Multimap<Alternative, Criterion> altCrit = ArrayListMultimap.create(); 
-	private static Multimap<Multimap<Alternative, Criterion>,Double> evals = ArrayListMultimap.create();
+	private static Multimap<Multimap<Alternative, Criterion> ,Double> evals = ArrayListMultimap.create();
 	public Evaluations(List<Double> val) {
 		this.crits = Criterion.getcriterionList();
 		this.alts = Alternative.getAlternativeList();
@@ -34,31 +34,34 @@ public class Evaluations{
 	
 	// How to implement all the elements if the mapList ?
 	    public static void addEvaluation(Evaluations eva) {
-	     	for(int i = 0 ; i < eva.val.size(); i++) {
-	    	 	for(int j = 0 ; j < eva.crits.size(); j++) {
-	    	 		 	altCrit.put(eva.crits.get(j),eva.val.get(i));
-	    	 	}
+	   
+	    	 		for(int j = 0 ; j < eva.val.size(); j++) {
+	    	 		 evals.put(getMultimap(eva),eva.val.get(j));
+	    	 		}
+	    	 	 }
+	    	 		  
+	
+	    
+	    private static Multimap<Alternative, Criterion> getMultimap(Evaluations eva) {
 
-			while(!altCrit.isEmpty()) {
-				for(int j = 0 ; j < eva.val.size(); j++) {
-	    	 		 	evals.put(altCrit.put(altCrit.keySet(eva.alts.get(j)).  ,eva.val.get(j)));
-	    	 	}
-	    	}
-	    }
+	      	for(int i = 0 ; i < eva.val.size(); i++) {
+		    	 	for(int j = 0 ; j < eva.crits.size(); j++) {
+		    	 		 	altCrit.put(eva.alts.get(i),eva.crits.get(j));
+		    	 	}
+	       }
+	      	return altCrit;
+	  }
 
 	    public static void clearcriterionList() {
 	        evals.clear();
 	    }
 
-	    public static Multimap<Alternative, Criterion>  EvaluationToList(){
-	         return evals;
-	    }
 	
 	//Method to convert the Evaluation object to a JSON type
-	public String toJSONString() {
+	public static String toJSONString() {
 		Gson gson = new Gson();
 		//gson.toJson(this, new FileWriter("D:\\Evaluations.json"));
-		return gson.toJson(this);
+		return gson.toJson(evals.asMap());
 	}
 	//Method to convert the Evaluations object to a JSON file
 	public void toJSONFile() {
@@ -79,7 +82,7 @@ public class Evaluations{
 		
 		String genreJson = toJSONString();
 		JSONParser parser = new JSONParser();
-		JSONArray array = (JSONArray)parser.parse(genreJson );
+		JSONArray array = (JSONArray)parser.parse(genreJson);
 		try {
             JSONObject json = new JSONObject(array);
 			return CDL.toString(new JSONArray(json.toString()));

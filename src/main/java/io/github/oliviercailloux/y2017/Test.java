@@ -8,9 +8,9 @@ import org.json.simple.parser.ParseException;
 
 public class Test{
 
-public static void main(String[] args) throws JSONException, ParseException{
-	Criterion crit = new Criterion(1,"a0") ;
-	Criterion crit2 = new Criterion(2,"a0") ;
+public static void main(String[] args) {
+	Criterion crit = new Criterion(1,"c") ;
+	Criterion crit2 = new Criterion(2,"c") ;
 	Criterion.addcriterionToList(crit);
 	Criterion.addcriterionToList(crit2);
 	Alternative alt1 = new Alternative("a01","Sami");
@@ -24,7 +24,7 @@ public static void main(String[] args) throws JSONException, ParseException{
 	Evaluations evals = new Evaluations(eval);
 	Evaluations.addEvaluation(evals);
 	
-	 String EvaluationCSV = evals.toCSV() ;
+	 String EvaluationCSV = Evaluations.toJSONString();
 	try {
 		System.out.println(EvaluationCSV);
 	} catch (Exception e) {
