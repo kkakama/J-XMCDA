@@ -97,6 +97,7 @@ image::https://github.com/kkakama/J-XMCDA/tree/DivizIssue/img/image4.png[height=
 image::https://github.com/kkakama/J-XMCDA/tree/DivizIssue/img/image5.png[height=100]
 
  
+
 Dans cet exemple les critères sont :  Price, Power, 0-100, Consumption, CO2. Les alternatives sont Audi A3 TDI e, Audi A4 berline, BMW 118d Hatch, BMW 320d Berline,  Volvo C30, Volvo S40 D5. 
 Une performance est calculée pour chaque alternative en fonction des différents critères .
 
@@ -131,6 +132,8 @@ Nous avons constaté qu’en exécutant les modules diviz dénotés “J-XMCDA�
 image::https://github.com/kkakama/J-XMCDA/tree/DivizIssue/img/exception.png[height=100]
 
 
+
+
 Pour résoudre cette exception nous avons modifié le namespace des fichiers d’entrée. A la place de xmlns:xmcda=”htpps://www.decision-deck.org/2012/XMCDA-2.2.1”  nous avons mis xmlns:xmcda=”htpps://www.decision-deck.org/2009/XMCDA-1.1.0” . 
 Suite à cette modification les workflows se sont exécutés avec succès. 
 Nous pensons que les modules de diviz ont été configurés avec la version V2.1.0  du xmcda et que par conséquent il y’a un problème de compatibilité lorsque les fichiers d’entrées sont des xml au schéma XMCDA V2.2.1. 
@@ -155,16 +158,9 @@ Nous avons notamment observé que les services J-XMCDA de la plateforme n’acce
 
 Sources
 ~~~~~~~
+---
 
 https://www.decision-deck.org/diviz/_static/ReportDecisionDeck-DEIM-URV.pdf
 http://www.lgi.ecp.fr/~mousseau/Cours/MCDA/pmwiki-2.2.10/uploads/Main/D2Patrick.pdf
 https://vimeo.com/205553907
 
-AsciiDocLIVE is a *free online http://www.methods.co.nz/asciidoc/[AsciiDoc^]
-editor*.
-
-* Just type AsciiDoc source text into the *left* pane,
-* ...and the live preview appears in the *right* pane!
-
-
-W
