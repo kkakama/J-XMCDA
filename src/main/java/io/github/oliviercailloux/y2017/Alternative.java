@@ -78,7 +78,7 @@ public class Alternative {
         return alternatives_list;
 
         
-        }
+   }
 	public static void createAlternativeList() {
 		list_alternatives = new ArrayList<Alternative>();
     }
