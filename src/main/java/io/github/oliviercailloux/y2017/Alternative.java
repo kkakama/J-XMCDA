@@ -7,6 +7,8 @@ import java.util.Iterator;
 import javax.json.Json;
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
+
+import org.eclipse.yasson.internal.JsonBindingBuilder;
 /**
  * 
  * @author MESKAOUI & BROCHEN
@@ -69,7 +71,9 @@ public class Alternative {
 	}
 	//Create Json B and Serialize 
 	public void serializeAlternative(Alternative alt) throws Exception{
-		//Jsonb jsonb = JsonbBuilder.create();
+		// Create Jsonb and serialize
+	/*	Jsonb jsonb = JsonbBuilder.create();
+		String result = jsonb.toJson(dog); */
 		//String result = jso.toJson(alt);
 	
 
@@ -90,6 +94,7 @@ public class Alternative {
 			Alternative a1 =new Alternative("id1", "volvo");
 			System.out.println(a1.rank);
 			//a1.serializeAlternative(a1);
+			
 	} 
 		
 		
