@@ -26,29 +26,6 @@ public class AlternativeList {
 	
 	private static ArrayList<Alternative> list_alternatives;
 	public static Multimap<Integer,Alternative> multi= ArrayListMultimap.create();
-	
-	
-	public static void createAlternativeList() {
-		list_alternatives = new ArrayList<Alternative>();
-    }
-
-    public static void addAlternativeToList(Alternative Alternative) {
-    	list_alternatives.add(Alternative);
-    }
-    public static void clearRang(int rang){
-    }
-    public static void clearAlternative(Alternative alt){
-    	
-    }
-    public static void clearAlternativeList() {
-    	list_alternatives.clear();
-    }
-
-    public static ArrayList<Alternative> getAlternativeList() {
-         return list_alternatives;
-    }
-    
-  
 	/**
 	 * this function makes it possible to associate each alternative group with a rank using Multimap (Guava API) 
 	 * @param list
