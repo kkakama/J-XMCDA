@@ -72,8 +72,8 @@ public class Alternative {
 	//Create Json B and Serialize 
 	public void serializeAlternative(Alternative alt) throws Exception{
 		// Create Jsonb and serialize
-	/*	Jsonb jsonb = JsonbBuilder.create();
-		String result = jsonb.toJson(dog); */
+		Jsonb jsonb = JsonbBuilder.create();
+		//String result = jsonb.toJson(alt); 
 		//String result = jso.toJson(alt);
 	
 

@@ -26,7 +26,6 @@ public class AlternativeList {
 	
 	private static ArrayList<Alternative> list_alternatives;
 	public static Multimap<Integer,Alternative> multi= ArrayListMultimap.create();
-	private int compteur;
 	
 	
 	public static void createAlternativeList() {
@@ -49,38 +48,7 @@ public class AlternativeList {
          return list_alternatives;
     }
     
-    /*
-	public static ArrayList<Alternative> readJsonAlternatives(String file){
-		
-		ArrayList<Alternative> alternatives_list=new ArrayList<Alternative>();
-		Alternative alt;
-		String name="";
-		String id="";
-        JSONParser parser = new JSONParser();
-        try {
-       	 
-            Object obj = parser.parse(new FileReader(file));
-            JSONObject jsonObject = (JSONObject) obj;
-            JSONArray alts = (JSONArray) jsonObject.get("alternatives");
-            //System.out.println(alts.toString());
-            Iterator i = alts.iterator();
-            //JSONObject alts_att = (JSONObject) i.next();
-            while(i.hasNext()){
-            	JSONObject alts_att = (JSONObject) i.next();
-            	name = (String)alts_att.get("name");
-            	id= (String)alts_att.get("id");
-            	alt=new Alternative(id,name);
-            	alternatives_list.add(alt);
-            }
-            
-           
-	}
-        catch(Exception e){
-        	}
-        return alternatives_list;
-
-        
-        } */
+  
 	/**
 	 * this function makes it possible to associate each alternative group with a rank using Multimap (Guava API) 
 	 * @param list
