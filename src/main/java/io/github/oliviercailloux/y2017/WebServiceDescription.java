@@ -17,6 +17,10 @@ public class WebServiceDescription {
 	private static Map<String, XmcdaModularTypes> map =new HashMap<String, XmcdaModularTypes>(); 
 	
 
+	public WebServiceDescription(Map<String, XmcdaModularTypes> m ){
+		map = m;
+		
+	}
 	public WebServiceDescription(String id, XmcdaModularTypes type) {
 		this.id = id;
 		this.type = type;
