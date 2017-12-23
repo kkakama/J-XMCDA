@@ -2,18 +2,11 @@
  * 
  */
 package io.github.oliviercailloux.y2017;
+import javax.json.bind.Jsonb;
+import javax.json.bind.JsonbBuilder;
+import javax.json.bind.JsonbConfig;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.XML;
-
-import com.google.gson.Gson;
-import com.google.gson.JsonIOException;
 
 /**
  * @author Nbencheri2
@@ -21,34 +14,19 @@ import com.google.gson.JsonIOException;
  */
 public class Criterion {
 
-	public int id;
+	private int id;
 	private String name;
+
 	
-	private static List<Criterion> criterionList= new ArrayList<Criterion>();
+	
 	// Criterion constructor
 	public Criterion(int id, String name) {
-		super();
+		
 		this.id = id;
 		this.name = name;
+		
 	}
-	// List and method of all the Criteria
-
-
-	    public static void addcriterionToList(Criterion criterion) {
-	        criterionList.add(criterion);
-	    }
-
-	    public static Criterion getcriterionAt(int location) {
-	        return criterionList.get(location);
-	    }
-
-	    public static void clearcriterionList() {
-	        criterionList.clear();
-	    }
-
-	    public static List<Criterion> getcriterionList() {
-	         return criterionList;
-	    }
+	
 	    
 	 // Getter and Setter of the ID and the name   
 	public int getId() {
@@ -73,31 +51,16 @@ public class Criterion {
 		return "Criterion name :" +this.name+ " , id :" + this.id;
 	}
 	
-	//Method to convert an XML file to  JSON file
-	public void xmlToJson(String file) throws JSONException {
-		JSONObject jsonObject = XML.toJSONObject(file);		
-		System.out.println(jsonObject);
-	}
+	// Create Json and serialize
+	public String toJson() {
+		Jsonb jsonb = JsonbBuilder.create((new JsonbConfig().withFormatting(true)));
+	    String json = jsonb.toJson(this);
+		return json;
 	
-	//Method to convert the Criterion object to a JSON type
-	public String toJSONString() throws JsonIOException, IOException {
-		Gson gson = new Gson();
-		return gson.toJson(this);
 	}
-
-
-	//Method to convert the Criterion object to a JSON file
-	public void toJSONFile() {
-		Gson gson = new Gson();
-		
-		try {
-			gson.toJson(this, new FileWriter("Criteria.json"));
-		} catch (JsonIOException e) {
-			System.out.println(e.getMessage());
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-	}
+	// Deserialize back
+	   public Criterion JsontoCriterion(String CriterionJson) {
+	    	Jsonb jsonb = JsonbBuilder.create();
+	    	return jsonb.fromJson(CriterionJson, Criterion.class);
+	    }
 }
