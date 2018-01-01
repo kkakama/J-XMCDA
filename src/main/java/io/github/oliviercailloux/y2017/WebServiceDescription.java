@@ -1,11 +1,22 @@
 package io.github.oliviercailloux.y2017;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.StringReader;
+import java.io.StringWriter;
 import java.util.*;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
+import javax.json.JsonReader;
+import javax.json.JsonStructure;
+import javax.json.JsonWriter;
+import javax.json.stream.JsonParser;
+import javax.json.stream.JsonParser.Event;
+
 /**
  * 
  * @author KAKAMA & SAMI
@@ -16,7 +27,9 @@ public class WebServiceDescription {
 	XmcdaModularTypes type;
 	private static Map<String, XmcdaModularTypes> map =new HashMap<String, XmcdaModularTypes>(); 
 	
-
+	public WebServiceDescription(){
+	
+	}
 	public WebServiceDescription(Map<String, XmcdaModularTypes> m ){
 		map = m;
 		
@@ -60,13 +73,94 @@ public class WebServiceDescription {
 	public  void setMap(Map<String, XmcdaModularTypes> map) {
 		WebServiceDescription.map = map;
 	}
+	/**
+	 * With this function we can create a Json File saved in the project repository
+	 * @param map
+	 * 	
+	 */
+	public void encodageJson(Map<String,XmcdaModularTypes> map){	
+		JsonObjectBuilder buil =Json.createObjectBuilder();
+		Set keys = map.keySet();
+		Iterator it = keys.iterator();
+		while (it.hasNext()){
+		   String key = (String) it.next(); 
+		   XmcdaModularTypes valeur = map.get(key); 
+		   buil.add(key, String.valueOf(valeur));
+		}
+		JsonObject mod = buil.build();
+		StringWriter stWriter = new StringWriter();
+		JsonWriter jsonWriter = Json.createWriter(stWriter);
+		jsonWriter.writeObject(mod);
+		jsonWriter.close();
+		 
+		String jsonData = stWriter.toString();
+		try {
+			FileWriter f = new FileWriter("WebServiceDescr.json");
+			f.write(jsonData);
+			f.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(jsonData);
+		
+	}
+	/**
+	 * With this function we can read Json File's content and stock it in our Map
+	 * @param filename
+	 * 				correspond to json file's name
+	 * @return
+	 */
+	public Map<String,XmcdaModularTypes> decodageJson(String filename){
+		Map<String,XmcdaModularTypes> jsonMap = new HashMap<String, XmcdaModularTypes>();
+		JsonReader reader;
+		String jsondata="";
+		try {
+			reader = Json.createReader(new FileReader(filename));
+			JsonStructure jsonst = reader.read();
+			jsondata= jsonst.toString();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		final JsonParser parser = Json.createParser(new StringReader(jsondata));
+	    String key = null;
+	    XmcdaModularTypes value = null;
+	    while (parser.hasNext()) {
+	         final Event event = parser.next();
+	         switch (event) {
+	         case KEY_NAME:
+	        	 key = parser.getString();
+	        	 break;
+	            case VALUE_STRING:
+	            	value = XmcdaModularTypes.valueOf(parser.getString());
+	            	 break; 
+	   	        }
+		        jsonMap.put(key, value);
+	    }
+	        parser.close();
+		return jsonMap;	
+		
+	}
+	public void showMap(Map<String,XmcdaModularTypes> m){
+		Set keys = map.keySet();
+		Iterator it = keys.iterator();
+		while (it.hasNext()){
+		   String key = (String) it.next(); 
+		   XmcdaModularTypes value = map.get(key);
+		   System.out.println(key+" : "+value);
+		}
+		
+	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		XmcdaModularTypes t = null; 
-		WebServiceDescription d  = new WebServiceDescription("id1", t.affineLinearFunction);
+		WebServiceDescription d  = new WebServiceDescription();
 		WebServiceDescription.map.put("id2", XmcdaModularTypes.binaryMeasurement);
-		System.out.println(WebServiceDescription.map.get("id1"));
-		System.out.println(WebServiceDescription.map.get("id2"));
+		WebServiceDescription.map.put("id3", XmcdaModularTypes.binaryMeasurement);
+		d.encodageJson(WebServiceDescription.map);
+		Map<String, XmcdaModularTypes> mappp=d.decodageJson("WebServiceDescr.json");
+		d.showMap(mappp);
 	}
 
 }

@@ -11,12 +11,14 @@ public enum XmcdaModularTypes {
 	},
 	 Function{
 
-		public String descr() {
-			return "type Fonction !";
+		public String toString() {
+			return "Function !";
 		}
 	},
 	ExponentialFunction {
-	
+		public String toString() {
+			return "ExponentialFunction !";
+		}
 	},
 	Point2D {
 		
