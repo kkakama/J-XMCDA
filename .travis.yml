@@ -1,1 +1,15 @@
+<<<<<<< HEAD
 language : java
+=======
+language: java
+git:
+  depth: 1
+jdk:
+  - openjdk8
+dist: trusty
+cache:
+  directories:
+    - $HOME/.m2
+
+
+>>>>>>> dc230e67427e9aa9ecc0d8ddf25ef2a0e9085c69
