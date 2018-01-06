@@ -13,8 +13,6 @@ import java.util.Iterator;
 public class Alternative {
 	private String id;
 	private String name;
-	private int rank;
-	//private static ArrayList<Alternative> list_alternatives;
 	
 	
 	/**
@@ -44,13 +42,7 @@ public class Alternative {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getRank() {
-		return rank;
-	}
 
-	public void setRank(int rank) {
-		this.rank = rank;
-	}
 	
 	
 	/**
