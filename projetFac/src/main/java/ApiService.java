@@ -1,5 +1,8 @@
+import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
@@ -7,16 +10,16 @@ public final class ApiService {
 
 	public static void sendData(ProblemModel model) {
 		System.out.println("call api...: " + model.getProblemId());
-
+			String JSON_STRING = "";
 		try {
+			StringEntity requestEntity = new StringEntity(
+				    JSON_STRING,
+				    ContentType.APPLICATION_JSON);
 			CloseableHttpClient httpclient = HttpClients.createDefault();
 			HttpPost httppost = new HttpPost("http://localhost/");
-			CloseableHttpResponse response = httpclient.execute(httppost);
-			try {
+			httppost.setEntity(requestEntity);
 
-			} finally {
-				response.close();
-			}
+			HttpResponse response = httpclient.execute(httppost);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
