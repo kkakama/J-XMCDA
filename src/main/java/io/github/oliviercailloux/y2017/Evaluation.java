@@ -1,61 +1,50 @@
 package io.github.oliviercailloux.y2017;
-import javax.json.bind.Jsonb;
-import javax.json.bind.JsonbBuilder;
-import javax.json.bind.JsonbConfig;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
+@XmlRootElement (name="service") 
 
-public class Evaluation{
+public class Evaluation {
 
-	public Criterion crit;
-	public Alternative alt;
-	public Double val;
-	
-	
-	public Evaluation(Alternative alt, Criterion crit, Double val) {
-		this.alt = alt;
-		this.crit = crit;
-		this.val = val;
-
-	}
-	
-	// Getters and Setters
-	public Alternative getalt() {
-		return alt;
-	}
-
-	public void setalt(Alternative alt) {
-		this.alt = alt;
-	}
-
+	private Criterion crit;
+	private Alternative alt;
+	private Double val;
+	private int id;
 	public Criterion getCrit() {
 		return crit;
 	}
-
-	public void setCrit(Criterion  crit) {
-		this.crit= crit;
+	public void setCrit(Criterion crit) {
+		this.crit = crit;
+	}
+	public Alternative getAlt() {
+		return alt;
+	}
+	public void setAlt(Alternative alt) {
+		this.alt = alt;
 	}
 	public Double getVal() {
 		return val;
 	}
-
-	public void setVal(Double  val) {
-		this.val= val;
-	}	
-	    
-//Create Json and serialize
-public String toJson() {
-
-				Jsonb jsonb = JsonbBuilder.create((new JsonbConfig().withFormatting(true)));
-				String json = jsonb.toJson(this);
-				return json;
-			
-			
+	public void setVal(Double val) {
+		this.val = val;
 	}
-//Deserialize back
-public Evaluation JsontoEvaluation(String EvalJson) {
-	Jsonb jsonb = JsonbBuilder.create();
-	return jsonb.fromJson(EvalJson, Evaluation.class);
-}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	@Override
+	public String toString() {
+		return "Evaluation [crit=" + crit + ", alt=" + alt + ", val=" + val + ", id=" + id + "]";
+	}
+	
+	
+	
 
+	
 }
