@@ -80,10 +80,7 @@ public class Problem {
     
  // method to add the Evaluation table
 	
-    public void addEvaluations(Evaluation eval) {
-    		evals.put(eval.alt,eval.crit, eval.val);
-    	
-    	 	 }	  
+   	  
  // Create Json and serialize
     
     
