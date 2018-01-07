@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement (name="service")
 public class Alternative {
 
-	private String id;
+	private Integer id;
 	@Override
 	public String toString() {
 		return "Alternative [id=" + id + ", name=" + name + "]";
 	}
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {
