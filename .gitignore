@@ -1,5 +1,5 @@
 target/
 .settings/
 .Ds_Store
-.project
+.project/
 bin/
