@@ -1,30 +1,55 @@
 package io.github.oliviercailloux.y2017;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-@XmlRootElement (name="service")
+
+/**
+ * 
+ * @author MESKAOUI & BROCHEN
+ *
+ */
 public class Alternative {
-
-	private Integer id;
-	@Override
-	public String toString() {
-		return "Alternative [id=" + id + ", name=" + name + "]";
+	private String id;
+	private String name;
+	
+	
+	/**
+	 * Constructor of alternative class containing the folowing parameters
+	 * @param id
+	 * @param name
+	 */
+	public Alternative(String id, String name) {
+		this.id = id;
+		this.name = name;
 	}
-	public Integer getId() {
+	
+	
+	// getters and setters
+	public String getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+
+	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	private String name;
-
+	
+	/**
+	 * 
+	 * @param file
+	 * 	name of the file of alternatives list
+	 * @return
+	 * list of alternatives in the correct format (ID, NAME)
+	 */
+	
+	
 }
