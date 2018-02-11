@@ -2,167 +2,18 @@ package io.github.oliviercailloux.y2017;
 
 /**
  * 
- * @author KAKAMA ET SAMI 
+ * @author KAKAMA ET SAMI
  *
  */
-public enum XmcdaModularTypes {
-	DefaultX2{
-		
-	},
-	 Function{
 
-		public String toString() {
-			return "Function !";
-		}
-	},
-	ExponentialFunction {
-		public String toString() {
-			return "ExponentialFunction !";
-		}
-	},
-	Point2D {
-		
-	},
-	PiecewiseLinearFunctio{
-		
-	},
-	affineLinearFunction{
-		
-	},
-	keyedEntity{
-		
-	},
-	alternative{
-		
-	},
-	alternativeSet{
-		
-	},
-	category{
-		
-	},
-	categorySet{
-		
-	},
-	attribute{
-		
-	},
-	attributeSet{
-		
-	},
-	nominalToCardinal{
-		
-	},
-	nominalToCardinalSet{
-		
-	},
-	measurement{
-		
-	},
-	exactMeasurement{
-		
-	},
-	binaryMeasurement{
-		
-	},
-	interval{
-		
-	},
-	gaussian{
-		
-	},
-	impreciseNominalMeasurement{
-		
-	},
-	criterion{
-		
-	},
-	criterionSet{
-		
-	},
-	directUtilityCriterion{
-		
-	},
-	directUtilityCriterionSet{
-		
-	},
-	nominalUtilityCriterion{
-		
-	},
-	
-	nominalUtilityCriterionSet{
-		
-	},
-	cardinalUtilityCriterion{
-		
-	},
-	cardinalUtilityCriterionSet{
-		
-	},
-	directedCriterion{
-		
-	},
-	directedCriterionSet{
-		
-	},
-	outrankingCriterionSet{
-		
-	},
-	valuedEntity{
-		
-	},
-	valuedEntitySet{
-		
-	},
-	exactValuedEntity{
-		
-	},
-	exactValuedEntitySet{
-		
-	},
-	anyValuedPair{
-		
-	},
-	anyValuedRelation{
-		
-	},
-	binaryValuedPair{
-		
-	},
-	binaryRelation{
-		
-	},
-	valuedPair{
-		
-	},
-	valuedRelation{
-		
-	},
-	intervalValuedPair{
-		
-	},
-	intervalValuedRelation{
-		
-	},
-	
-	gaussianValuedPair{
-		
-	},
-	gaussianValuedRelation{
-		
-	},
-	nominalValuedPair{
-		
-	},
-	nominalValuedRelation{
-		
-	},
-	impreciseNominalValuedPair{
-		
-	},
-	impreciseNominalValuedRelation{
-		
-	};
-	
+public enum XmcdaModularTypes {
+
+	DEFAULTX2, FUNCTION, EXPONENTIALFUNCTION, POINT2D, PIECEWISELINEARFUNCTIO, AFFINELINEARFUNCTION, KEYEDENTITY, ALTERNATIVE, 
+	ALTERNATIVESET, CATEGORY, CATEGORYSET, ATTRIBUTE, ATTRIBUTESET, NOMINALTOCARDINAL, NOMINALTOCARDINALSET, MEASUREMENT, EXACTMEASUREMENT,
+	BINARYMEASUREMENT, INTERVAL, GAUSSIAN, IMPRECISENOMINALMEASUREMENT, CRITERION, CRITERIONSET, DIRECTUTILITYCRITERION, 
+	DIRECTUTILITYCRITERIONSET, NOMINALUTILITYCRITERION, NOMINALUTILITYCRITERIONSET, CARDINALUTILITYCRITERION, CARDINALUTILITYCRITERIONSET,
+	DIRECTEDCRITERION, DIRECTEDCRITERIONSET, OUTRANKINGCRITERIONSET, VALUEDENTITY, VALUEDENTITYSET, EXACTVALUEDENTITY, EXACTVALUEDENTITYSET,
+	ANYVALUEDPAIR, ANYVALUEDRELATION, BINARYVALUEDPAIR, BINARYRELATION, VALUEDPAIR, VALUEDRELATION, INTERVALVALUEDPAIR, INTERVALVALUEDRELATION,
+	GAUSSIANVALUEDPAIR, GAUSSIANVALUEDRELATION, NOMINALVALUEDPAIR, NOMINALVALUEDRELATION, IMPRECISENOMINALVALUEDPAIR, IMPRECISENOMINALVALUEDRELATION;
 
 }
