@@ -5,7 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Test;
-
+/**
+ * 
+ * @author SAMI & NOUFISSA
+ *
+ */
 public class SchemaGeneratorTest {
 	
 	    @Test
