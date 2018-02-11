@@ -6,14 +6,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.*;
 
 
 /**
  * 
  * @author MESKAOUI & BROCHEN
+ * 
  *
  */
 @Entity
+@XmlRootElement(name = "alternative")
+@XmlAccessorType (XmlAccessType.FIELD)
 public class Alternative {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -55,13 +59,6 @@ public class Alternative {
 		this.name = name;
 	}
 	
-	/**
-	 * 
-	 * @param file
-	 * 	name of the file of alternatives list
-	 * @return
-	 * list of alternatives in the correct format (ID, NAME)
-	 */
 	
 	
 }

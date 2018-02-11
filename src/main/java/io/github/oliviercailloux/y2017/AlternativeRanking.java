@@ -6,8 +6,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
@@ -15,20 +13,17 @@ import java.util.Set;
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
-import javax.json.JsonBuilderFactory;
 import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
 import javax.json.JsonReader;
-import javax.json.JsonStructure;
 import javax.json.JsonValue;
 import javax.json.JsonWriter;
 import javax.json.stream.JsonParser;
 import javax.json.stream.JsonParser.Event;
 
 import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Multimap;
-import com.google.common.collect.MultimapBuilder.ListMultimapBuilder;
+import com.google.common.collect.Multiset.Entry;
 	/**
 	 * 
 	 * @author SAMI & ELISE
@@ -41,7 +36,7 @@ import com.google.common.collect.MultimapBuilder.ListMultimapBuilder;
 		
 		private int rank;
 		private Alternative alternative;
-		public static Multimap<Integer, Alternative> list_alternatives=ArrayListMultimap.create();
+		private Multimap<Integer, Alternative> list_alternatives=ArrayListMultimap.create();
 		
 		
 		// Getters and Setters
@@ -82,7 +77,11 @@ import com.google.common.collect.MultimapBuilder.ListMultimapBuilder;
 		 * @throws AlternativeException
 		 */
 		public void altsRanking(int rank, Alternative alt)throws AlternativeException{
-			int last_rank=list_alternatives.size();
+			int last_rank=0;
+		
+			for (Integer key : list_alternatives.keySet()) { 
+					last_rank=key;
+				 } 		 
 			int next_rank=last_rank+1;
 			if(list_alternatives.isEmpty() && rank==0){
 				throw new AlternativeException("you need to enter a rank that starts with 1");
@@ -91,7 +90,7 @@ import com.google.common.collect.MultimapBuilder.ListMultimapBuilder;
 			if(list_alternatives.isEmpty() && rank>1)
 				throw new AlternativeException("The alternatives list is still empty, you need to enter a rank that starts with 1");
 			
-			else if(!list_alternatives.isEmpty() && rank!=next_rank){
+			else if(!list_alternatives.isEmpty() && rank>next_rank){
 				throw new AlternativeException("you need to enter a rank that equals "+next_rank); 
 			} 
 			else{
@@ -112,20 +111,17 @@ import com.google.common.collect.MultimapBuilder.ListMultimapBuilder;
 				 } 		
 			}
 			/***
-			 * this function has for goal creating json file of the list of alternatives
+			 * this function has for goal creating json format of the list of alternatives
 			 * @param alternatives
 			 * 					  our multimap
 			 */
 		
 			
-			public void encodageJson(Multimap<Integer,Alternative> alternatives){
+			public String encodageJson(Multimap<Integer,Alternative> alternatives){
 				Collection<Alternative> alts;
 				JsonObjectBuilder ob= Json.createObjectBuilder();
 			    JsonArrayBuilder jb=Json.createArrayBuilder();
-			    Set keys = alternatives.keySet();
-				Iterator it = keys.iterator();
-				while (it.hasNext()){
-				   Integer key = (Integer) it.next(); 
+			    for(Integer key:alternatives.keySet()){
 				    alts=  alternatives.get(key);
 					 for(Alternative al:alts){
 						
@@ -145,12 +141,21 @@ import com.google.common.collect.MultimapBuilder.ListMultimapBuilder;
 			    jsonWriter.writeObject(empObj);
 				jsonWriter.close();	 
 				String jsonData = stWriter.toString();
-				System.out.println(jsonData);
+				//System.out.println(jsonData);
 				
-				try {
-					FileWriter f = new FileWriter("Alternatives.json");
+				return jsonData;
+				
+			}
+			
+			// writing in json file
+			public void encodageJson(String jsonFileName){
+				// get json code from multimap
+				String jsonData= encodageJson(this.getMulti_ranking());
+			    
+				// write json code in file wih json extension
+				try (FileWriter f = new FileWriter(jsonFileName+".json")){
+					
 					f.write(jsonData);
-					f.close();
 				} catch (IOException e) {
 					e.printStackTrace();
 				} 
@@ -168,11 +173,9 @@ import com.google.common.collect.MultimapBuilder.ListMultimapBuilder;
 				String id="";
 				String name="";
 				int rank=0;
-				JsonReader reader;
-				try {
-					reader = Json.createReader(new FileReader(jsonFileName));
+				try(JsonReader reader = Json.createReader(new FileReader(jsonFileName))) {
+					
 					JsonObject alts = reader.readObject();
-					reader.close();
 					JsonArray arrAlts= alts.getJsonArray("alternatives");
 					for(JsonValue value : arrAlts){
 		                final JsonParser parser = Json.createParser(new StringReader(value.toString()));
@@ -215,7 +218,7 @@ import com.google.common.collect.MultimapBuilder.ListMultimapBuilder;
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				}
-				
+				// retrun our list of alternatives 
 				return alternatives;	
 				
 			}
