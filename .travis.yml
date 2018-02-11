@@ -3,7 +3,7 @@ git:
   depth: 1
 jdk:
   - openjdk8
-dist: trusty
+dist: precise
 cache:
   directories:
   - "$HOME/.m2"
