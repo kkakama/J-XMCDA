@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * 
- * @author KAKAMA & SAMI
+ * @author SAMI & KAKAMA
  *
  */ 
 @XmlRootElement

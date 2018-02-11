@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.*;
 
 
 
@@ -14,6 +15,8 @@ import javax.persistence.Id;
 	 * @author Nbencheri2
 	 * @author BadredineEljemli
 	 */
+	@XmlRootElement(name = "criteria")
+	@XmlAccessorType (XmlAccessType.FIELD)
 	@Entity
 	public class Criterion {
 		@Id

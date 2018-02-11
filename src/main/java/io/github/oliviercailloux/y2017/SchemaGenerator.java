@@ -10,7 +10,11 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.SchemaOutputResolver;
 
-
+/**
+ * 
+ * @author Sami & Noufissa
+ *
+ */
 public class SchemaGenerator {
 	
 public void marshalling(WebServiceDescription web) throws IOException{

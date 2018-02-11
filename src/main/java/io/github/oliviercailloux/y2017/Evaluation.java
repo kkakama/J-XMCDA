@@ -4,17 +4,25 @@ import javax.json.bind.JsonbBuilder;
 import javax.json.bind.JsonbConfig;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.xml.bind.annotation.*;
 
 
 @Entity
+
+@XmlRootElement(name = "evaluation")
+@XmlAccessorType (XmlAccessType.FIELD)
+
 public class Evaluation{
 //	@Id
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column
+	@XmlElement(name = "criteria")
 	public Criterion crit;
 	@Column
+	@XmlElement(name = "alternative")
 	public Alternative alt;
 	@Column
+	@XmlElement(name = "value")
 	public Double val;
 	
 	
