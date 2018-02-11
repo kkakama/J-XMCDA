@@ -4,6 +4,9 @@ git:
 jdk:
   - openjdk8
 dist: trusty
+group: stable
+dist: trusty
+os: windows
 cache:
   directories:
   - "$HOME/.m2"
