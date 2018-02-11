@@ -1,4 +1,4 @@
 applications: 
 	- name: J-XMCDA
-	   path: target/J-XMCDA.war
+	  path: target/J-XMCDA.war
 	  instances: 1
