@@ -1,8 +1,11 @@
 package io.github.oliviercailloux.y2017;
 
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Iterator;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 
 /**
@@ -10,8 +13,12 @@ import java.util.Iterator;
  * @author MESKAOUI & BROCHEN
  *
  */
+@Entity
 public class Alternative {
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private String id;
+	@Column
 	private String name;
 	
 	
@@ -26,6 +33,11 @@ public class Alternative {
 	}
 	
 	
+	public Alternative() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	// getters and setters
 	public String getId() {
 		return id;

@@ -2,6 +2,11 @@ package io.github.oliviercailloux.y2017;
 
 	import javax.xml.bind.annotation.XmlRootElement;
 
+	/* I create a bean model; 
+	 * Response for sending response to client systems. 
+	 * I will be sending XML response, 
+	 * the beans will be annotated with @XmlRootElement
+	 */
 	@XmlRootElement
 	public class Response {
 

@@ -2,13 +2,19 @@ package io.github.oliviercailloux.y2017;
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.json.bind.JsonbConfig;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
 
-
+@Entity
 public class Evaluation{
-
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column
 	public Criterion crit;
+	@Column
 	public Alternative alt;
+	@Column
 	public Double val;
 	
 	
@@ -59,3 +65,4 @@ public Evaluation JsontoEvaluation(String EvalJson) {
 }
 
 }
+

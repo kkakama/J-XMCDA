@@ -2,13 +2,12 @@ package io.github.oliviercailloux.y2017;
 
 	import java.util.HashMap;
     import java.util.Map;
-	import java.util.Set;
 
 	import javax.ws.rs.Consumes;
 	import javax.ws.rs.GET;
 	import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
+	import javax.ws.rs.PUT;
+	import javax.ws.rs.Path;
 	import javax.ws.rs.PathParam;
 	import javax.ws.rs.Produces;
 	import javax.ws.rs.core.MediaType;
@@ -20,6 +19,13 @@ import javax.ws.rs.Path;
 	import io.github.oliviercailloux.y2017.Evaluation;
 	import io.github.oliviercailloux.y2017.Response;
 
+	/*
+	 * Some of the important JAX-RS annotations used below :
+	 * @Path: used to specify the relative path of class and methods.
+	 * @GET, @PUT, @POST : used to specify the HTTP request type for a method.
+	 * @Produces, @Consumes: used to specify the request and response types.
+	 * @PathParam: used to bind the method parameter to path value by parsing it.
+	 */
 	@Path("/service")
 	@Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.APPLICATION_XML)

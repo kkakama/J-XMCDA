@@ -5,6 +5,9 @@ import io.github.oliviercailloux.y2017.Alternative;
 //import io.github.oliviercailloux.y2017.Evaluation;
 import io.github.oliviercailloux.y2017.Response;
 
+/*
+ *  below is the service interface and it’s implementation code.
+ */
 public interface BasicServlets {
 
 	public Alternative getAlternative(String id);

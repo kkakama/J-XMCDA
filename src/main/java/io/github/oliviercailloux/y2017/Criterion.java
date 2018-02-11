@@ -2,20 +2,26 @@ package io.github.oliviercailloux.y2017;
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.json.bind.JsonbConfig;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 
 
 	/**
 	 * @author Nbencheri2
-	 *
+	 * @author BadredineEljemli
 	 */
+	@Entity
 	public class Criterion {
-
+		@Id
+		@GeneratedValue(strategy = GenerationType.SEQUENCE)
 		private int id;
+		@Column
 		private String name;
 
-		
-		
 		// Criterion constructor
 		public Criterion(int id, String name) {
 			
@@ -60,6 +66,4 @@ import javax.json.bind.JsonbConfig;
 		    	Jsonb jsonb = JsonbBuilder.create();
 		    	return jsonb.fromJson(CriterionJson, Criterion.class);
 		    }
-	
-
 }
