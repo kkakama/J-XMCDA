@@ -1,0 +1,168 @@
+Rapport du projet XMCDA
+
+
+
+
+Master 2 MIAGE SITN Apprentissage
+
+
+
+
+
+
+présenté par     
+Badreddine El Jemli
+Elise Brochen
+Kakama Sall
+Noufissa Bencherif-Ouedghiri
+sami meskaoui
+Sandra TUZA MANGARA
+
+Objectif du document:
+-----------------------
+Ce document a pour objectif de décrire les difficultés rencontrées tout au long du projet XMCDA.Il met en évidence les points forts , les limites, les solutions apportées aux certaines difficultés ainsi que les apports de ce projet.
+
+
+Sommaire
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+I.  Introduction
+II. Organisation du groupe
+III.Difficultés rencontrées
+IV. Solutions apportées à certains problèmes
+V.  Points forts
+VI. Limites
+VII.Apports du projet
+
+
+I.Introduction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ce projet avait pour but de permettre l’invocation de services web XMCDA, en appliquant les concepts appris dans le cours de JEE ,pendant cette année académique.
+La réalisation de ce projet a nécessité l’utilisation du gestionnaire de version,git ainsi que l’installation de différents logiciels comme Maven, Glassfish,...
+
+Au démarrage du projet, une liste de fonctionnalités à mettre en place nous a été fournies et nous avons sélectionné celles qui nous parlaient de plus, et qui correspondaient aux concepts déjà abordés en classe .
+
+II. Organisation du groupe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Etant un groupe de 6, nous avons pu travaillé sur les fonctionnalités suivantes:
+Diviz: consistait à se familiariser avec l’usage de Diviz, et le présenter aux autres
+
+Alts : consistait à créer un objet Alternative pour représenter un rangement d’alternatives 
+
+Crits : correspondait à créer un objet Criterion, et un objet Evaluation qui sert à représenter les évaluations d’un ensemble d’alternatives et de criterions par des valeurs 
+
+ServiceDescr:  consistait à créer un ensemble de paires d’id  et de type
+
+BasicServlets: correspondait à créer des servlets qui associent des objets de base à un identifiant d’un problème
+
+BasicClient:Implémenter un client qui permet, avec un GUI rudimentaire ou en ligne de commande, l’édition de ces données de base
+
+ObjectsXML: Encoder / décoder vos objets du modèle en XML
+
+GenSchema:Étant donné un objet WebServiceDescription, classe SchemaGenerator qui retourne un schéma XSD correspondant réutilisant les types de xmcda-modular
+
+Online:consistait à faire tourner le serveur en ligne grâce au service d’IBM
+
+UseDB: consistait à modifier les servlets pour qu’ils écrivent dans et lisent la BD
+
+SetDB1:Implémenter des entités JPA et les méthodes permettant d’écrire et de lire depuis la BD alternatives, critères, évaluations, AlternativeTree
+
+Rédaction du rapport: rédaction d’un rapport qui explique les difficultés rencontrées ainsi que les apports de ce projet.
+
+Chaque fonctionnalité  a été réalisée par un binôme, et nous avons tourné de binômes afin de faire circuler les connaissances ,car nous n’avions pas tout le même niveau de compétences ni de compréhension du sujet.
+Le tableau ci-dessous récapitule les binômes formés pour chaque fonctionnalité:
+
+|=======================
+Fonctionnalité  |membre1      |Membre2
+|1 Diviz        |Kakama       |Sandra
+|2 Alts         |Elise        |Samy
+|3 Crits        |Badredine    |Noufissa
+|4 ServiceDescr |Kakama       |Samy
+|5 BasicServlets|Badredine    |Sandra
+|6 BasicClient  |Elise        |Noufissa
+|7 ObjectsXML   |Kakama       |Samy
+|8 GenSchema    |Noufissa     |Samy
+|9 Online       |Kakama       |Noufissa
+|10 UseDB       |Badredine    |Elise
+|11 SetDB1      |Badredine    |Elise
+|12 Rapport     |Sandra       | 
+
+|=======================
+
+III. Difficultés rencontrées
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Pour ce projet, nous avons rencontrées  beaucoup de difficultés, car les  concepts du JEE , les technologies et logiciels utilisés étaient nouveaux pour beaucoup d’entre nous ,du coup ça nous a demandé de fournir beaucoup d’énergie afin d’aboutir à l’objectif du projet .
+les problèmes rencontrées,peuvent être classés en deux catégories suivantes:
+
+* Problèmes communs 
+* Problèmes particuliers par fonctionnalité/binôme
+
+
+Les problèmes communs identifiés:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Comprendre le sujet : Nous avons mis énormément de temps à comprendre le sujet. En effet, nous avons passé plus de temps à faire des recherches sur internet d’où les retards de livraison pour certaines fonctionnalités.
+
+* Problème d’installation de logiciels Maven et glassfish : Chacun d’entre nous a rencontré ce problème d’installation de logiciels. Cela a entraîné du retard pour le déroulement du projet. 
+
+* Manque de visibilité sur l’architecture du projet : Depuis le début du projet, nous avons eu du mal a visualiser l’architecture entière du projet, car nous n’avions pas un cahier de charge détaillé.  Cela nous a causé des problèmes d’où le fait de vous solliciter  plusieurs fois par mails sur la réexplication de chaque fonctionnalité.
+
+* Gestion des conflits lors d’un push sur Git, mauvais dépôts sur la branche master: La manque de maîtrise de gestionnaire de version git,  a été un un problème majeur  pour nous tout au long de notre projet :
+Elise dit :”
+Nous avons rencontrés plusieurs soucis dans l’organisation de travail avec notre gestionnaire de version git.Dans un premier temps, les commits n’étaient pas toujours très clairs( manque de précision au niveau des commentaires), ce qui a été très difficile pour moi de m’y retrouver pour corriger l’ensemble des problèmes existant.
+Ensuite, lors de Push certains groupes n’ont pas réussi à régler les conflits, de ce fait, des parties de code ont été écrasées. De plus, toutes les configurations Eclipse de chaque groupe ont été déposées sur le dépôt git ce qui a généré des conflits pour chaque nouveau commit de l’ensemble des groupes
+L’utilisation de Git en groupe n’a pas toujours été très pertinente, les commits n’étaient pas réguliers et bloquaient souvent l’avancement du travail pour d’autres groupe. Chaque groupe créait sa propre branche puis appliquait un merge pour venir sur la branche master, ce qui a souvent créé des conflits..”
+Le discours d’Elise c’est un des exemples qui montre la gravité  de ce problème de git. Ce problème a également empêché la livraison de certaines fonctionnalités à temps . On a essayé d’apporter une solution à ce problème, et la solution retenu est abordé dans le chapitre “solutions trouvées pour certaines problèmes” .
+
+
+Problèmes particuliers par binôme/fonctionnalité :
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Génération de JSON lorsque l’objet est une Multimap( Fonctionnalité crits par Noufissa et Badredine)
+
+* Problème avec les versions du schéma  XMCDA X2 ( version v2.2.1) et X3: (Fonctionnalité Diviz par Kakama et Sandra):Kakama et moi nous avons constaté qu’en exécutant les modules diviz dénotés “J-XMCDA” nous avions une exception. Nous avons également testé les modules diviz avec des fichiers xml au schéma  XMCDA V3 c’est à dire en modifiant le namespace avec v3 au lieu de v2. Nous avons eu une erreur : “ les données ne peuvent pas être validées”.
+
+* Problème avec les versions du schéma  XMCDA X2 ( version v2.2.1) et X3: (Fonctionnalité Diviz par Kakama et Sandra):Kakama et moi nous avons constaté qu’en exécutant les modules diviz dénotés “J-XMCDA” nous avions une exception. Nous avons également testé les modules diviz avec des fichiers xml au schéma  XMCDA V3 c’est à dire en modifiant le namespace avec v3 au lieu de v2. Nous avons eu une erreur : “ les données ne peuvent pas être validées”.
+
+* Déploiement du serveur (Fonctionnalité BasicServlets par Badreddine et Sandra): Badreddine et moi avons eu beaucoup de mal à réaliser cette fonctionnalité. En particulier,de mon coté, j’ai un bas niveau en programmation ,j’ai mis du temps a démarré ,en cherchant d’abord à comprendre ce qu’il faut faire , j’ai dû revoir le cours, j’ai commencé par faire le tp sur les servlets mais malheuresement, je n’ai pas pu aboutir à quelque chose qui fonctionne, mais finalement nous avons complété cette fonctionnalité.
+Concernant la configuration du fichier Pom.xml, on a rajouté les dépendances nécessaires et notamment Jax-rs .
+Nous avons utilisé l’API JAX-RS qui utilise des annotations tel que : @PATH, @GET, @PUT, @POST, @Produces, @Consumes et @PathParam  pour simplifier le développement et le déploiement des Web Services.
+
+* Déploiement en ligne du serveur à l’aide de l’outil d’IBM : (fonctionnalité faite par Kakama et noufissa). Nous avons réalisé toutes les configurations nécessaires :  modification puis validation du fichier .travis.yml conformément aux instructions, modification du pom.xml pour ajouter un bloc “build”, creation du fichier manifest.yml.Cependant dans travis nous avions l’erreur << the command “eval mvn install-DskipTests=true -Dmaven.javadoc.skip=true -B -v” failed 3 times. your build has been stopped>>. Après plusieurs recherches nous nous sommes aperçues que cette erreur était déjà survenus lors d’anciens build sur le projets. Nous avons exploré plusieurs piste pour le résoudre mais aucune n’a aboutie.
+
+* ObjetXML : fonctionnalité développée par Kakama et Sami. Nous avons eu des difficultés sur la mise au format en x2 et Xmcda modular de nos classes java. En utilisant jaxb nous avons réussi à encoder et décoder nos classes dans du Xml.
+
+* SetDB1:(Fonctionnalité faite par Badreddine et Elise): 
+Nous avons commencé par installer MySQL+ l’interface Workbench, puis configurer le Driver MySql Connector pour assurer la connection avec le projet java ainsi Hibernate à partir de Maven (voir dependencies) nous avons utilisé JPA pour décrire nos entités , id et colonnes. Nous avons créé  des méthodes pour lire et écrire sur la Base de données Alternative, Criterion, Evaluation et AlternativeTree  afin d’établir un lien entre notre base de donnée mySQL et Hibernate ,malheureusement ,nous avons rencontré des difficultés au niveau de la configuration du fichier hibernate plus précisément le fichier  hibernate.cfg.xml. Mais on a réussi d’afficher un bon résultat sur la classe SetDB1_Main qui se trouve sur le package src/test/java.
+Nous avons réussi de lire et écrire sur la Base de données MySQL (Workbench) à partir des méthodes crées sur des classes Java.
+
+
+IV.Solutions apportées aux certains problèmes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Au cours du projet ,nous avons essayé de résoudre les  problèmes pertinents afin d’améliorer notre qualité de travail.
+En ce qui concerne le problème de git,nous avons mis en place les solutions suivantes: 
+
+
+* Nous nous sommes mis d’accord ,sur le fait d’être plus précis dans nos commits ,bien mettre les commentaires , pour qu’on sache à quoi correspond chaque commit.
+
+* Lors du problème de conflits, à cause les mauvais commits, Badreddine a réussi de revenir à l’état précédente (avant les mauvais commits) pour aider élise à nettoyer le dépôt. 
+
+* concernant le problème de conflits, nous avons mis du temps à trouver la solution,et puis Elise et Badredine ont réussi à  trouver la solution :"Badredine a réussi  à faire revenir le git  à l'état précédente (c-à-dire : avant les mauvais commits) ce qui a permit à Elise par la suite de  nettoyer le dépôt, configurer le gitignore et untracked certains fichiers avec la commande git rm -- cached [file]”
+
+De plus,pour le bon fonctionnement de certaines fonctionnalités, Noufissa a dû rajouter certaines classes qui n'étaient pas  dans la liste des fonctionnalités comme la classe “Problème” ainsi que la classe “DataBase” 
+
+V.Points forts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+En tant que le groupe ,nous sommes contents d’avoir réussi à avoir un grand nombre  fonctionnalités qui fonctionnent correctement. Nous sommes également contents  d’avoir abouti au nombre de fonctionnalités demandé.
+
+VI.Limites
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Un des limites de notre projet est que ,nous n’avons pas eu l’occasion de connecter toutes nos fonctionnalités, certaines sont restées indépendantes, les unes par rapports aux autres.
+
+VII.Apports du projet
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ce projet nous a donné l’occasion de découvrir le gestionnaire de version, git . Il nous a également permis de mettre en pratique les concepts du JEE vus en cours,ainsi que l’utilisation des différents logiciels comme maven et glassfish. Les connaissances acquises grâce à ce projet vont jouer un rôle important dans notre future insertion professionnelle, surtout pour ceux qui souhaitent orienter leur carrière dans le développement des logiciels.
+
+
+
