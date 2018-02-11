@@ -6,4 +6,12 @@ jdk:
 dist: trusty
 cache:
   directories:
-    - $HOME/.m2
+  - "$HOME/.m2"
+deploy:
+  provider: bluemixcloudfoundry
+  skip_cleanup: true
+  username: noufissa.bencherif@gmail.com
+  password: $BLUEMIX_PASSWORD
+  organization: noufissa.bencherif@gmail.com
+  space: dev
+  region: eu-gb
