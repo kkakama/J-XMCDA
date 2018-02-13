@@ -1,5 +1,6 @@
 --- 
+? "-name"
+: J-XMCDA
 applications: ~
 instances: 1
-name: J-XMCDA
 path: target/J-XMCDA.war
