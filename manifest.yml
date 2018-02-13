@@ -1,4 +1,5 @@
-applications: 
-	- name: J-XMCDA
-	  path: target/J-XMCDA.war
-	  instances: 1
+--- 
+applications: ~
+instances: 1
+name: J-XMCDA
+path: target/J-XMCDA.war
