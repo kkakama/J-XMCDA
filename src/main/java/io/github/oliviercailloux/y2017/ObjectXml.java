@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import javax.xml.bind.*;
 
-import com.sun.jersey.server.wadl.generators.ObjectFactory;
+//import com.sun.jersey.server.wadl.generators.ObjectFactory;
 
 
 /**

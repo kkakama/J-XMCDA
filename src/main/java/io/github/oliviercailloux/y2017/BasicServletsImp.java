@@ -17,7 +17,6 @@ package io.github.oliviercailloux.y2017;
     import io.github.oliviercailloux.y2017.Alternative;
 	import io.github.oliviercailloux.y2017.Criterion;
 	import io.github.oliviercailloux.y2017.Evaluation;
-	import io.github.oliviercailloux.y2017.Response;
 
 	/*
 	 * Some of the important JAX-RS annotations used below :
@@ -57,51 +56,21 @@ package io.github.oliviercailloux.y2017;
 		}
 		
 		@Override
-		@POST
-	    @Path("/add")
-		public Response addAlternative(Alternative alt) {
-			Response response = new Response();
-			if(alternatives.get(alt.getId()) != null){
-				response.setStatus(false);
-				response.setMessage("Alternative Already Exists");
-				return response;
-			}
-			alternatives.put(alt.getId(), alt);
-			response.setStatus(true);
-			response.setMessage("Alternative created successfully");
-			return response;
+		public Evaluation setEvaluations(int id) {
+			// TODO Auto-generated method stub
+			return null;
 		}
-		
+
 		@Override
-		@POST
-	    @Path("/add")
-		public Response addCriterion(Criterion crit) {
-			Response response = new Response();
-			if(criteria.get(crit.getId()) != null){
-				response.setStatus(false);
-				response.setMessage("Criterion Already Exists");
-				return response;
-			}
-			criteria.put(crit.getId(), crit);
-			response.setStatus(true);
-			response.setMessage("Criterion created successfully");
-			return response;
+		public Alternative addAlternative(Alternative alt) {
+			// TODO Auto-generated method stub
+			return null;
 		}
-		
+
 		@Override
-		@PUT
-	    @Path("/{id}/set")
-		public Response setEvaluation(@PathParam("id") int id) {
-			Response response = new Response();
-			if(evaluations.get(id) == null){
-				response.setStatus(false);
-				response.setMessage("Evaluation Doesn't Exists");
-				return response;
-			}
-			evaluations.keySet();
-			response.setStatus(true);
-			response.setMessage("Evaluation updated successfully");
-			return response;
+		public Criterion addCriterion(Criterion crit) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 		
 	}
