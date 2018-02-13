@@ -1,6 +1,6 @@
 --- 
 applications: 
   - 
-    name: springtock
+    name: J-XMCDA
     path: ./target/J-XMCDA.war
 instances: 1
