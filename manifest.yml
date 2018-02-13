@@ -1,6 +1,6 @@
 --- 
-? "-name"
-: J-XMCDA
-applications: ~
+applications: 
+  - 
+    name: springtock
+    path: ./target/J-XMCDA.war
 instances: 1
-path: target/J-XMCDA.war
