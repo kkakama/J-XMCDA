@@ -1,4 +1,4 @@
-package io.github.oliviercailloux.y2017.view;
+package io.github.oliviercailloux.y2017.jxmcda.view;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
