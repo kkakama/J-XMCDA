@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import io.github.oliviercailloux.y2017.jxmcda.entities.WebServiceDescription;
 import io.github.oliviercailloux.y2017.jxmcda.entities.XmcdaModularTypes;
-import io.github.oliviercailloux.y2017.jxmcda.jsonxml.SchemaGenerator;
+import io.github.oliviercailloux.y2017.jxmcda.utils.SchemaGenerator;
 /**
  * 
  * @author SAMI & NOUFISSA

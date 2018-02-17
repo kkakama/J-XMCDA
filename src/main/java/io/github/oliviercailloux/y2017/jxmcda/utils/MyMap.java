@@ -1,4 +1,4 @@
-package io.github.oliviercailloux.y2017.jxmcda.jsonxml;
+package io.github.oliviercailloux.y2017.jxmcda.utils;
 
 
 import javax.xml.bind.annotation.XmlElement;

@@ -6,7 +6,7 @@ import org.junit.Test;
 import io.github.oliviercailloux.y2017.jxmcda.entities.Alternative;
 import io.github.oliviercailloux.y2017.jxmcda.entities.Alternatives;
 import io.github.oliviercailloux.y2017.jxmcda.entities.Criterion;
-import io.github.oliviercailloux.y2017.jxmcda.jsonxml.ObjectXml;
+import io.github.oliviercailloux.y2017.jxmcda.utils.ObjectXml;
 public class ObjectXmlTest {
 	@Test
 	public void test() {

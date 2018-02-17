@@ -11,7 +11,7 @@ import com.google.common.collect.Multimap;
 import io.github.oliviercailloux.y2017.jxmcda.entities.Alternative;
 import io.github.oliviercailloux.y2017.jxmcda.entities.AlternativeException;
 import io.github.oliviercailloux.y2017.jxmcda.entities.AlternativeRanking;
-import io.github.oliviercailloux.y2017.jxmcda.jsonxml.JsonReadWrite;
+import io.github.oliviercailloux.y2017.jxmcda.utils.JsonReadWrite;
 
 public class JsonReadWriteTest {
 	
