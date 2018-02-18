@@ -28,7 +28,7 @@ public class AlternativeRankingTest {
 				alts.altsRanking(2, a3);
 			} catch (AlternativeException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				e.getMessage();
 			}
 			
 		
