@@ -113,6 +113,12 @@ Nous avons rencontrés plusieurs soucis dans l’organisation de travail avec no
 Ensuite, lors de Push certains groupes n’ont pas réussi à régler les conflits, de ce fait, des parties de code ont été écrasées. De plus, toutes les configurations Eclipse de chaque groupe ont été déposées sur le dépôt git ce qui a généré des conflits pour chaque nouveau commit de l’ensemble des groupes
 L’utilisation de Git en groupe n’a pas toujours été très pertinente, les commits n’étaient pas réguliers et bloquaient souvent l’avancement du travail pour d’autres groupe. Chaque groupe créait sa propre branche puis appliquait un merge pour venir sur la branche master, ce qui a souvent créé des conflits..”
 Le discours d’Elise c’est un des exemples qui montre la gravité  de ce problème de git. Ce problème a également empêché la livraison de certaines fonctionnalités à temps . On a essayé d’apporter une solution à ce problème, et la solution retenu est abordé dans le chapitre “solutions trouvées pour certaines problèmes” .
+Cependant certains groupe ont été pénalisé de de manière injuste pendant les CC et le respect des délais:
+-> Pour la Livraison du S4: Il y'a eu un commit qui a écrasé tous les autres:
+  *Priere de voir les commits du 7/01
+ 
+-> Pour la Livraison du S8: Pour eviter que notre code soit ecraser encore une fois nous avons du attendre le derniers commit de notre collegue qui n a reussi a le faire qu'a 23h30 ce qui nous a laisse tres peu de temps pour faire tous nos commit avant minuit.
+
 
 
 Problèmes particuliers par binôme/fonctionnalité :
