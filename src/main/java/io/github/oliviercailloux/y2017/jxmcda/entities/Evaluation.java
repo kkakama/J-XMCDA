@@ -57,20 +57,20 @@ public class Evaluation{
 		this.val= val;
 	}	
 	    
-//Create Json and serialize
-public String toJson() {
+	//Create Json and serialize
+	public String toJson() {
 
-				Jsonb jsonb = JsonbBuilder.create((new JsonbConfig().withFormatting(true)));
-				String json = jsonb.toJson(this);
-				return json;
-			
-			
+		Jsonb jsonb = JsonbBuilder.create((new JsonbConfig().withFormatting(true)));
+		String json = jsonb.toJson(this);
+		return json;
+
+
 	}
-//Deserialize back
-public Evaluation JsontoEvaluation(String EvalJson) {
-	Jsonb jsonb = JsonbBuilder.create();
-	return jsonb.fromJson(EvalJson, Evaluation.class);
-}
+	//Deserialize back
+	public Evaluation JsontoEvaluation(String EvalJson) {
+		Jsonb jsonb = JsonbBuilder.create();
+		return jsonb.fromJson(EvalJson, Evaluation.class);
+	}
 
 }
 
