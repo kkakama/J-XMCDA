@@ -3,6 +3,7 @@ import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.json.bind.JsonbConfig;
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,7 @@ import javax.xml.bind.annotation.*;
 	 */
 	@XmlRootElement(name = "criteria")
 	@XmlAccessorType (XmlAccessType.FIELD)
-	@Entity
+	@Embeddable
 	public class Criterion {
 		@Id
 		private int id;
