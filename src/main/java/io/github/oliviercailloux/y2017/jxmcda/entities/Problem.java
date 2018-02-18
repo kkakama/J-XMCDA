@@ -57,62 +57,62 @@ public class Problem {
 
 	 // Each problem has a List of Alternatives, so we could access to this list using the following method
 	    
-    public List<Alternative> getAlternatives() {
-        return alternatives ;
-    }
+	    public List<Alternative> getAlternatives() {
+		return alternatives ;
+	    }
     
     // Each problem has a List of Evaluations, so we could access to this list using the following method
     
-    public Table<Alternative, Criterion, Double> getEvaluations() {
-        return evals ;
-    }
+	    public Table<Alternative, Criterion, Double> getEvaluations() {
+		return evals ;
+	    }
     
-    public   void addCriterion(Criterion crit) {
-       criteria.add(crit);
-    }
+	    public   void addCriterion(Criterion crit) {
+	       criteria.add(crit);
+	    }
 
 
  // Each problem has a List of Alternatives, so we could access to this list using the following method
     
-    public void addAlternatives(Alternative alt) {
-	   alternatives.add(alt);
-	}
+	    public void addAlternatives(Alternative alt) {
+		   alternatives.add(alt);
+	    }
     
  // method to add the Evaluation table
 	
-    public void addEvaluations(Evaluation eval) {
-    		evals.put(eval.alt,eval.crit, eval.val);
-    	
-    	 	 }	  
+	    public void addEvaluations(Evaluation eval) {
+			evals.put(eval.alt,eval.crit, eval.val);
+
+	    }	  
  // Create Json and serialize
     
     
-    public String CriteriatoJson() {
-    		Jsonb jsonb = JsonbBuilder.create((new JsonbConfig().withFormatting(true)));
-	    String json = jsonb.toJson(criteria);
-		return json;
-	
-	}
+	    public String CriteriatoJson() {
+			Jsonb jsonb = JsonbBuilder.create((new JsonbConfig().withFormatting(true)));
+		    	String json = jsonb.toJson(criteria);
+			return json;
+
+	    }
     
-    public String AlternativestoJson() {
-    		Jsonb jsonb = JsonbBuilder.create((new JsonbConfig().withFormatting(true)));
-	    String json = jsonb.toJson(alternatives);
-		return json;
-	
-	}
-    public String EvaluationstoJson() {
-    	
-    		Jsonb jsonb = JsonbBuilder.create((new JsonbConfig().withFormatting(true)));
-	    String json = jsonb.toJson(evals.rowMap());
-	   /* StringWriter stringWriter = new StringWriter();
-		JsonWriterFactory writerFactory = Json.createWriterFactory(ImmutableMap.of(JsonGenerator.PRETTY_PRINTING, true));
-		try (JsonWriter jsonWriter = writerFactory.createWriter(stringWriter)) {
-			jsonWriter.write(json);
-		}
+	    public String AlternativestoJson() {
+			Jsonb jsonb = JsonbBuilder.create((new JsonbConfig().withFormatting(true)));
+		        String json = jsonb.toJson(alternatives);
+			return json;
+
+	    }
+	    public String EvaluationstoJson() {
+
+			Jsonb jsonb = JsonbBuilder.create((new JsonbConfig().withFormatting(true)));
+		    String json = jsonb.toJson(evals.rowMap());
+		   /* StringWriter stringWriter = new StringWriter();
+			JsonWriterFactory writerFactory = Json.createWriterFactory(ImmutableMap.of(JsonGenerator.PRETTY_PRINTING, true));
+			try (JsonWriter jsonWriter = writerFactory.createWriter(stringWriter)) {
+				jsonWriter.write(json);
+	    }
 		return stringWriter.toString();*/
 		
 		return json;
-	}
+	    }
 
 
 }
