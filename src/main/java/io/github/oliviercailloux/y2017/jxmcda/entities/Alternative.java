@@ -2,6 +2,7 @@ package io.github.oliviercailloux.y2017.jxmcda.entities;
 
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,13 +10,13 @@ import javax.persistence.Id;
 import javax.xml.bind.annotation.*;
 
 
-/**
+/**@Entity
  * 
  * @author MESKAOUI & BROCHEN
  * 
  *
  */
-@Entity
+@Embeddable
 @XmlRootElement(name = "alternative")
 @XmlAccessorType (XmlAccessType.FIELD)
 public class Alternative {

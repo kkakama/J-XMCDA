@@ -1,6 +1,8 @@
 package io.github.oliviercailloux.y2017.entities;
 
 
+import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 import io.github.oliviercailloux.y2017.jxmcda.entities.Alternative;
@@ -18,7 +20,9 @@ public class AlternativeTest {
 	@Test
 	public void test() {
 		Alternative a1 =new Alternative("a1", "volvo");
-		System.out.println("id="+a1.getId()+", name="+a1.getName());
+		assertEquals("a1",a1.getId());
+		assertEquals("volvo",a1.getName());
+
 	}
 
 }

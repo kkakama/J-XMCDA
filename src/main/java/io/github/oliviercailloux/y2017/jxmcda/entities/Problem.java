@@ -12,6 +12,9 @@ import javax.json.JsonWriterFactory;
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.json.bind.JsonbConfig;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /*
 import javax.json.stream.JsonGenerator;
 import com.google.common.collect.ArrayListMultimap;
@@ -21,8 +24,9 @@ import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.ImmutableMap;
 */
 import com.google.common.collect.Table;
-
+@Entity
 public class Problem {
+	@Id
 	private String id;
 	private Problem problem;
 	private  List<Criterion> criteria= Collections.synchronizedList( new ArrayList<Criterion>());

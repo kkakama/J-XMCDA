@@ -26,8 +26,10 @@ public class ObjectXmlTest {
 		Criterion c1=new Criterion(1,"c1");
 		Criterion c2=new Criterion(2,"c2");
 		Criterion c3=new Criterion(1,"c3");
-	
 		
+		/**
+		 * x.marshalling creates a file in output: no way to test it 
+		 */
 		ObjectXml x=new ObjectXml();
 		/*
 		x.marshalling(new Alternative("a1","volvo"));

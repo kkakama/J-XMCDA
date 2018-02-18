@@ -38,7 +38,7 @@ public class JsonReadWriteTest {
 
 		JsonReadWrite j=new JsonReadWrite();
 		//System.out.println(j.encodageJson(al.getMulti_ranking()));
-		actual=j.encodageJson(altsInput.getMulti_ranking());
+		actual=j.encodageJsonAlt(altsInput.getMulti_ranking());
 		expected="{\"alternatives\":[{\"rank\":1,\"name\":\"volvo\",\"id\":\"a1\"},{\"rank\":1,\"name\":\"volvo\",\"id\":\"a1\"},{\"rank\":2,\"name\":\"opel\",\"id\":\"a3\"}]}";
 
 		//System.out.println(actual);

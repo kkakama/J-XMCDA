@@ -55,77 +55,7 @@ public class WebServiceDescription {
 	public  void setMap(Map<String, XmcdaModularTypes> map) {
 		this.map= map;
 	}
-	/**
-	 * With this function we can create a Json File saved in the project repository
-	 * @param map
-	 * 	
-	 */
-	public String encodageJson(Map<String,XmcdaModularTypes> map){	
-		JsonObjectBuilder buil =Json.createObjectBuilder();
-		for(Map.Entry<String, XmcdaModularTypes> entry : map.entrySet()){
-		   XmcdaModularTypes valeur = entry.getValue(); 
-		   buil.add(entry.getKey(), String.valueOf(valeur));
-		}
-		StringWriter stWriter = new StringWriter();
-		JsonObject mod = buil.build();
-		try (JsonWriter jsonWriter = Json.createWriter(stWriter)) {
-			jsonWriter.writeObject(mod);
-		}
-		//our json code
-		String jsonData = stWriter.toString();
-		
-		return jsonData;
-		
-	}
-	/**
-	 * Write Json Code in file
-	 * @param jsonFileName -- name of file 
-	 */
-	public void createJson(String jsonFileName){
-		try (FileWriter f = new FileWriter(jsonFileName)){
-			f.write(encodageJson(map));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-	}
-	/**
-	 * With this function we can read Json File's content and stock it in our Map
-	 * @param filename
-	 * 				correspond to json file's name
-	 * @return
-	 */
-	public Map<String,XmcdaModularTypes> decodageJson(String filename){
-		String key = null;
-		XmcdaModularTypes value = null;
-		Map<String,XmcdaModularTypes> jsonMap = new HashMap<String, XmcdaModularTypes>();
-		String jsondata="";
-		try (JsonReader reader = Json.createReader(new FileReader(filename))){
-			JsonStructure jsonst = reader.read();
-			jsondata= jsonst.toString();
-			final JsonParser parser = Json.createParser(new StringReader(jsondata));
-		    while (parser.hasNext()) {
-		         final Event event = parser.next();
-		         switch (event) {
-		         case KEY_NAME:
-		        	  key = parser.getString();
-		        	 break;
-		            case VALUE_STRING:
-		            	 value = XmcdaModularTypes.valueOf(parser.getString());
-		            	 break; 
-		   	        }
-		         if(key!=null && value!=null)
-			        jsonMap.put(key, value);
-		    }
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		return jsonMap;	
-		
-	}
+	
 	public void displayMap(Map<String,XmcdaModularTypes> map){
 		for(String key:map.keySet()){
 		   XmcdaModularTypes value = map.get(key);

@@ -25,9 +25,9 @@ public class ObjectXml {
 	// Marshalling Alternative 
 	public void marshalling(Alternative alt){
 		
-		JAXBContext jc;
+		JAXBContext context;
 		try {
-			JAXBContext context = JAXBContext.newInstance(Alternative.class);
+			 context = JAXBContext.newInstance(Alternative.class);
 			Marshaller m = context.createMarshaller();
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			//m.marshal(alt, System.out);
@@ -46,9 +46,9 @@ public class ObjectXml {
 	// Marshalling Alternative List
 	public void marshalling(Alternatives alt){
 		
-		JAXBContext jc;
+		JAXBContext context;
 		try {
-			JAXBContext context = JAXBContext.newInstance(Alternatives.class);
+		    context = JAXBContext.newInstance(Alternatives.class);
 			Marshaller m = context.createMarshaller();
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			//m.marshal(alt,System.out);
@@ -66,9 +66,9 @@ public class ObjectXml {
 	// Marshalling Criteria
 	public void marshalling(Criterion crit){
 			
-			JAXBContext jc;
+			JAXBContext context;
 			try {
-				JAXBContext context = JAXBContext.newInstance(Criterion.class);
+				context = JAXBContext.newInstance(Criterion.class);
 				Marshaller m = context.createMarshaller();
 				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 				//m.marshal(crit, System.out);
@@ -87,10 +87,10 @@ public class ObjectXml {
 		// Marshalling Criterion 
 		public void marshalling(CriteriaList crits){
 		
-		JAXBContext jc;
+		JAXBContext context;
 		try {
 		
-			JAXBContext context = JAXBContext.newInstance(CriteriaList.class);
+			context = JAXBContext.newInstance(CriteriaList.class);
 			Marshaller m = context.createMarshaller();
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			//m.marshal(crits,System.out);
@@ -108,9 +108,9 @@ public class ObjectXml {
 		// Marshalling Evaluation 
 	public void marshalling(Evaluation eval){
 			
-			JAXBContext jc;
+			JAXBContext context;
 			try {
-				JAXBContext context = JAXBContext.newInstance(Evaluation.class);
+			    context = JAXBContext.newInstance(Evaluation.class);
 				Marshaller m = context.createMarshaller();
 				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 				//m.marshal(eval, System.out);
@@ -165,10 +165,10 @@ public class ObjectXml {
 						}
 				break;
 		     
-			case "qlqchose":
-				System.out.println("ss");break;
+			case "other..":
+				System.out.println("other");break;
 			default:
-					System.out.println("ok");
+					System.out.println("");
 			
 		
 	}

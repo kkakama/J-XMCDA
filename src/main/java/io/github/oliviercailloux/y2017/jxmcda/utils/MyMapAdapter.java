@@ -7,6 +7,12 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 import io.github.oliviercailloux.y2017.jxmcda.entities.XmcdaModularTypes;
   
+
+/**
+ * The goal was to adapt map to xmcdaModular schema (in xml format)
+ * @author meskaoui
+ *
+ */
 public final class MyMapAdapter extends XmlAdapter<MyMapType,Map<String, XmcdaModularTypes>> {
   
   

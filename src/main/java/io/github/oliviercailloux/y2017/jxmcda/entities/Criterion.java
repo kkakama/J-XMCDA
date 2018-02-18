@@ -20,7 +20,6 @@ import javax.xml.bind.annotation.*;
 	@Entity
 	public class Criterion {
 		@Id
-		@GeneratedValue(strategy = GenerationType.SEQUENCE)
 		private int id;
 		@Column
 		private String name;

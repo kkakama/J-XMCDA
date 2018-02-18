@@ -4,7 +4,9 @@ package io.github.oliviercailloux.y2017.entities;
 
 import org.junit.Test;
 
+import io.github.oliviercailloux.y2017.jxmcda.entities.Alternative;
 import io.github.oliviercailloux.y2017.jxmcda.entities.Criterion;
+import io.github.oliviercailloux.y2017.jxmcda.entities.Evaluation;
 import io.github.oliviercailloux.y2017.jxmcda.entities.Problem;
 
 public class ProblemTest {
