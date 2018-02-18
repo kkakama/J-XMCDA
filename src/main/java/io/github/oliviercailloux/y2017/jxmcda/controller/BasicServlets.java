@@ -1,4 +1,4 @@
-package io.github.oliviercailloux.y2017.jxmcda.servlets;
+package io.github.oliviercailloux.y2017.jxmcda.controller;
 
 import io.github.oliviercailloux.y2017.jxmcda.entities.Alternative;
 import io.github.oliviercailloux.y2017.jxmcda.entities.Criterion;

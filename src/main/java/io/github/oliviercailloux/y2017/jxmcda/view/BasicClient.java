@@ -4,8 +4,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
+import io.github.oliviercailloux.y2017.jxmcda.controller.ApiService;
 import io.github.oliviercailloux.y2017.jxmcda.entities.ProblemModel;
-import io.github.oliviercailloux.y2017.jxmcda.servlets.ApiService;
 
 import java.awt.BorderLayout;
 import javax.swing.JPanel;

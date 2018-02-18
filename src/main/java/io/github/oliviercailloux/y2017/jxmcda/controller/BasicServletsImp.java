@@ -1,4 +1,4 @@
-package io.github.oliviercailloux.y2017.jxmcda.servlets;
+package io.github.oliviercailloux.y2017.jxmcda.controller;
 
 	import java.util.HashMap;
     import java.util.Map;
