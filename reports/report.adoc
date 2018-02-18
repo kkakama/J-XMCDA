@@ -114,7 +114,7 @@ Ensuite, lors de Push certains groupes n’ont pas réussi à régler les confli
 L’utilisation de Git en groupe n’a pas toujours été très pertinente, les commits n’étaient pas réguliers et bloquaient souvent l’avancement du travail pour d’autres groupe. Chaque groupe créait sa propre branche puis appliquait un merge pour venir sur la branche master, ce qui a souvent créé des conflits..”
 Le discours d’Elise c’est un des exemples qui montre la gravité  de ce problème de git. Ce problème a également empêché la livraison de certaines fonctionnalités à temps . On a essayé d’apporter une solution à ce problème, et la solution retenu est abordé dans le chapitre “solutions trouvées pour certaines problèmes” .
 
-Cependant certains groupe ont été pénalisé de de manière injuste pendant les CC et le respect des délais:
+Cependant certains groupe ont été pénalisé de manière injuste pendant les CC et le respect des délais:
 
 -> Pour la Livraison du S4 (7/01)
   Les commits de721cf3eaacca70992c884f73df6460ccbb7653, e964c873e75c2a8859210c722300fcfd7e71547a,           9119cf5d8a4fb1358dfba3e8ba7e1e9eac6eb064 ont écrasé une partie du code des autres commits.
@@ -122,6 +122,7 @@ Cependant certains groupe ont été pénalisé de de manière injuste pendant le
   Pour corriger cela les commits effectué par elise-b du 08 et 09 janvier ont permis de nettoyer le depôt.
  
 -> Pour la Livraison du S8: Pour eviter que notre code soit ecraser encore une fois nous avons du attendre le derniers commit de notre collegue qui n'a reussi à le faire qu'à 23h30 ce qui nous à laissé tres peu de temps pour faire tous nos commits avant minuit.
+Les fonctionnalités Objets XML et GenSchema n'ont donc pas été évlué , bien qu'elles aient été achevées depuis le samedi 10 fervier à 15h.  
 
 
 
@@ -138,7 +139,7 @@ Problèmes particuliers par binôme/fonctionnalité :
 Concernant la configuration du fichier Pom.xml, on a rajouté les dépendances nécessaires et notamment Jax-rs .
 Nous avons utilisé l’API JAX-RS qui utilise des annotations tel que : @PATH, @GET, @PUT, @POST, @Produces, @Consumes et @PathParam  pour simplifier le développement et le déploiement des Web Services.
 
-* Déploiement en ligne du serveur à l’aide de l’outil d’IBM : (fonctionnalité faite par Kakama et noufissa). Nous avons réalisé toutes les configurations nécessaires :  modification puis validation du fichier .travis.yml conformément aux instructions, modification du pom.xml pour ajouter un bloc “build”, creation du fichier manifest.yml.Cependant dans travis nous avions l’erreur << the command “eval mvn install-DskipTests=true -Dmaven.javadoc.skip=true -B -v” failed 3 times. your build has been stopped>>. Après plusieurs recherches nous nous sommes aperçues que cette erreur était déjà survenus lors d’anciens build sur le projets. Nous avons exploré plusieurs piste pour le résoudre mais aucune n’a aboutie.
+* Déploiement en ligne du serveur à l’aide de l’outil d’IBM : (fonctionnalité faite par Kakama et noufissa). Nous avons réalisé toutes les configurations nécessaires :  modification puis validation du fichier .travis.yml conformément aux instructions, modification du pom.xml pour ajouter un bloc “build”, creation du fichier manifest.yml.Cependant dans travis nous avions l’erreur << the command “eval mvn install-DskipTests=true -Dmaven.javadoc.skip=true -B -v” failed 3 times. your build has been stopped>>. Après plusieurs recherches nous nous avons pu résoudre ce problème et lancé correctemet notre serveur en ligne
 
 * ObjetXML : fonctionnalité développée par Kakama et Sami. Nous avons eu des difficultés sur la mise au format en x2 et Xmcda modular de nos classes java. En utilisant jaxb nous avons réussi à encoder et décoder nos classes dans du Xml.
 
