@@ -12,6 +12,9 @@ public class CriterionTest {
 		Criterion criterion = new Criterion(1,"a");
 		String critJson = criterion.toJson();
 		System.out.println(critJson);
+		critJson.equals("\n{\n" + "    \"id\": 1,\n" + "    \"name\": \"a\"\r\n" + "}");
+		
+	}
 		
 		
 	}
